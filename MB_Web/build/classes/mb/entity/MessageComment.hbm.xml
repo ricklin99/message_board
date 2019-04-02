@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2019/3/25 ?U?? 03:50:21 by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping default-access="field">
+ <class name="mb.entity.MessageComment" table="MESSAGECOMMENTS">
+  <id name="id" type="int">
+   <column name="ID"/>
+   <generator class="native"/>
+  </id>
+  <many-to-one class="mb.entity.Employee" fetch="join" name="employee" lazy="false">
+   <column name="EMP_NO"/>
+  </many-to-one>
+  <property generated="never" lazy="false" name="title" type="java.lang.String">
+   <column name="TITLE"/>
+  </property>
+  <property generated="never" lazy="false" name="issuedate" type="java.time.LocalDate">
+   <column name="ISSUE_DATE"/>
+  </property>
+  <property generated="never" lazy="false" name="dateOfDeadline" type="java.time.LocalDate">
+   <column name="DATE_OF_DEADLINE"/>
+  </property>
+  <property generated="never" lazy="false" name="messageContent" type="java.lang.String">
+   <column name="MESSAGE_CONTENT"/>
+  </property>
+ </class>
+</hibernate-mapping>

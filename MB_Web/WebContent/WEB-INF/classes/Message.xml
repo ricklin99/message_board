@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping
+    PUBLIC "-//Hibernate/Hibernate Mapping DTD//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-2.0.dtd">
+       <hibernate-mapping>
+        <class name="mb.entity.MessageComment" table="messages">
+
+            <id name="emp" type="int">
+                <column name="id" />
+                    <generator class="native"/>
+            </id>
+
+            <property name="title" column="name"/>
+            <property name="issueDate" column="issue_date" />
+            <property name="dateOfDeadline" column="date_of_deadline" />
+            <property name="messageContent" column="message_content" />
+
+
+
+  
+      </class>
+
+</hibernate-mapping>

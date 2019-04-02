@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping
+    PUBLIC "-//Hibernate/Hibernate Mapping DTD//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+       <hibernate-mapping>
+        <class name="MessageComment" table="messages">
+
+        <id name="messageId" type="int" column="message_id" > 
+            <generator class="native"/> 
+        </id> 
+
+        <component name="employee" class="Employee">
+            <property name="emp_no" column="emp_no" not-null="true"/>      
+        </component>
+        
+
+            <property name="title" column="title" type="string"/>
+            <property name="issueDate" column="issue_date" type="date"/>
+            <property name="dateOfDeadline" column="date_of_deadline" type="date"/>
+            <property name="messageContent" column="message_content" type="string"/>
+ 
+  
+      </class>
+
+</hibernate-mapping>

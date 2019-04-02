@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+	"http://struts.apache.org/dtds/struts-2.5.dtd">
+
+<struts>
+
+    <package name="test" extends="struts-default">
+    	 <!--修改預設的攔截器Stack設定，用於getModel -->
+    	<default-interceptor-ref name="paramsPrepareParamsStack"></default-interceptor-ref>
+    
+         <action name="message_*" class="mb.struts.action.MessageAction" method="{1}">
+            <result name="{1}">/message_{1}.jsp</result>
+            <result name="create">/message_create.jsp</result>
+            <result name="success" type="redirectAction">message_list</result>
+         <allowed-methods>list,edit,update,create,save</allowed-methods>
+         
+         </action>
+    </package>
+
+
+
+</struts>
+
+
+

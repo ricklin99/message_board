@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+		"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+		"http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+	
+		<!--資料庫基本訊息-->
+	    <property name="connection.username">root</property>
+	    <property name="connection.password">1234</property>
+	    <property name="connection.driver_class">com.mysql.jdbc.Driver</property>
+	    <property name="connection.url">jdbc:mysql:///mb?useUnicode=true&amp;characterEncoding=UTF-8</property>
+		
+		<!--hibernate基本設定 -->
+		
+		<!--使用的資料庫語法 -->
+		<property name="hibernate.dialect">org.hibernate.dialect.MySQL5InnoDBDialect</property>
+		
+		<!-- 執行時是否顯示SQL -->
+		<property name="show_sql">true</property>
+		
+		<!-- 執行時是否格式化SQL -->
+		<property name="format_sql">true</property>
+		
+		<!-- 執行策略 -->
+		<property name="hbm2ddl.auto">update</property>
+
+		<!-- 設定MySQL隔離級別，用於refresh -->
+		<property name="connection.isolation">2</property>
+		
+		<!-- 設定delete方法執行時，OID設為null -->
+		<property name="use_identifier_rollback">true</property>
+		
+		<!-- c3p0 Connection Pool設定 -->
+		<property name="hibernate.c3p0.max_size">10</property>
+		<property name="hibernate.c3p0.min_size">5</property>
+		<property name="hibernate.c3p0.acquire_increment">2</property>
+		
+		<property name="hibernate.c3p0.idle_test_period">2000</property>
+		<property name="hibernate.c3p0.timeout">2000</property>
+		
+		<property name="hibernate.c3p0.max_statements">10</property>
+		
+		<!-- 設定JDBC的Statement讀取資料庫時，每次從資料庫中取出的資料數(Oracle有效、MySQL無) -->
+		<property name="hibernate.jdbc.fetch_size">100</property>
+		
+		<!-- 設定對資料庫進行批量刪除、批量更新、批量插入的批次大小才(Oracle有效、MySQL無) -->
+		<property name="hibernate.jdbc.batch_size">30</property>
+		
+		<!-- 關聯文件.hbm.xml -->
+		<mapping resource="mb/entity/MessageComment.hbm.xml"/>
+		<mapping resource="mb/entity/Employee.hbm.xml"/>
+		
+
+		
+
+    </session-factory>
+</hibernate-configuration>

@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2019/3/25 ?U?? 03:50:21 by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="mb.entity.Employee" table="EMPLOYEES">
+        <id name="emp_no" type="int">
+            <column name="EMP_NO" />
+            <generator class="native" />
+        </id>
+        <property name="roleType">
+            <column name="ROLETYPE" />
+            <type name="org.hibernate.type.EnumType">
+                <param name="type">12</param>
+                <param name="enumClass">mb.entity.RoleType</param>
+            </type>
+        </property>
+    </class>
+</hibernate-mapping>
