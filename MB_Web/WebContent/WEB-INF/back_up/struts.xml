@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+   "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+   "http://struts.apache.org/dtds/struts-2.5.dtd">
+<struts>
+<!-- 
+	name:給其他物件使用
+	extends:用於繼承struts-default的設定
+	當作controller使用
+ -->
+   <package name="helloworld"  extends="struts-default">   
+   	<!-- 
+   		一個struts的請求就是一個action 
+   		name:對應一個請求的名字
+   	--> 
+      <action name="Hello" 
+            class="cn.w3cschool.struts2.HelloWorldAction" 
+            method="execute">
+            <result>/HelloWorld.jsp</result>
+      </action>
+   </package>
+</struts>

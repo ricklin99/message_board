@@ -75,6 +75,9 @@ public class MessageAction implements RequestAware, ModelDriven<MessageComment>,
 		service.deleteMessageComment(messageComment);
 		return "success";
 	}
+	public void prepareDelete() {
+		messageComment = new MessageComment();
+	}
 	//新增公布事項
 	public String create() {
 
